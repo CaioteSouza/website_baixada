@@ -1,0 +1,134 @@
+/*
+	Global.css: estilos compartilhados por todas as páginas
+	- Variáveis de cor (nomes amigáveis)
+	- Resets e tipografia
+	- Helpers de layout (container)
+	- Estilos comuns da topbar e header
+*/
+
+:root {
+	/* Paleta institucional */
+	--color-primary: #0c295d; /* era clr-itp-primary */
+    --color-blue-800: #0c174c; /* nova cor para complementar o gradiente */
+    --color-blue-700: #121f65; /* nova cor para complementar o gradiente */
+    --color-blue-600: #54a6cc;
+    --color-blue-500: #58c9fd;
+	--color-gray-200: #c0c1ca; /* era clr-itp-1 */
+	--color-navy-900: #09215b; /* era clr-itp-2 */
+	--color-accent-red: #dc3d2e; /* era clr-itp-3 */
+	--color-blue-600: #3d6296; /* era clr-itp-4 */
+	--color-teal-700: #0c5c7c; /* era clr-itp-5 */
+	--color-teal-300: #6d9caf; /* era clr-itp-6 */
+	--color-slate-700: #4a577b; /* era clr-itp-7 */
+	--color-slate-400: #7c88ac; /* era clr-itp-8 */
+	--color-neutral-900: #303030; /* era clr-itp-9 */
+	--color-salmon: #e4685c; /* era clr-itp-10 */
+
+	/* Extras úteis */
+	--color-white: #ffffff;
+	--color-black: #000000;
+	--color-whatsapp: #25d366; /* cor de marca do WhatsApp */
+
+		/* Layout vars */
+		--header-min-h: 64px;
+		--logo-width: 180px;   /* largura reservada p/ grid não quebrar */
+		--logo-size: 240px;     /* altura real do logo */
+		--logo-overlap-top: 120px; /* quanto o logo sobe sobre a topbar */
+}
+
+/* Reset e base */
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+	margin: 0;
+	font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+	color: var(--color-neutral-900);
+	background: var(--color-white);
+}
+
+/* Helpers */
+.container { width: min(1200px, 96%); margin: 0 auto; }
+
+/* Topbar (acima do header) */
+.topbar {
+	background: var(--color-white);
+	color: var(--color-blue-700); /* textos na cor primária */
+	border-bottom: 1px solid rgba(0,0,0,0.06);
+	font-size: 14px;
+    font-weight: 500;
+	position: relative;
+	z-index: 1; /* logo vai sobrepor */
+}
+.topbar__wrap {
+	display: grid;
+	grid-template-columns: 1fr auto;
+	gap: 12px;
+	padding: 20px 0;
+	align-items: center;
+}
+.topbar__center {
+	display: flex; justify-content: center; align-items: center; gap: 12px; flex-wrap: wrap;
+}
+.topbar__item { display: inline-flex; align-items: center; gap: 8px; }
+.topbar__item i { color: var(--color-blue-700); opacity: .95; }
+.topbar a.topbar__item { text-decoration: none; color: inherit; }
+.topbar a.topbar__item:hover { text-decoration: none; opacity: .92; }
+/* Ícone do Whats com background circular */
+.topbar__item i.fa-whatsapp {
+	background: var(--color-whatsapp);
+	color: var(--color-white);
+	border-radius: 999px;
+	width: 20px;
+	height: 20px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 12px;
+}
+.topbar__divider { opacity: .5; }
+.topbar__right { display: flex; justify-content: flex-end; align-items: center; gap: 10px; }
+.topbar__social { color: var(--color-blue-700); font-size: 18px; opacity: .9; text-decoration: none; }
+.topbar__social:hover { opacity: 1; color: var(--color-blue-800); }
+
+/* Header: estilos específicos foram movidos para header.css */
+
+/* Responsivo: ajustes da topbar em mobile */
+@media (max-width: 900px) {
+	.topbar__wrap {
+		grid-template-columns: 1fr auto;
+		gap: 10px;
+		padding: 10px 0;
+	}
+	
+	.topbar__center {
+		flex-direction: column;
+		align-items: center;
+		gap: 6px;
+		font-size: 13px;
+	}
+	
+	.topbar__right {
+		align-self: flex-start;
+		padding-top: 4px;
+	}
+	
+	.topbar__divider {
+		display: none;
+	}
+}
+
+@media (max-width: 640px) {
+	.topbar {
+		font-size: 12px;
+	}
+	
+	.topbar__center {
+		font-size: 10px;
+	}
+	
+	.topbar__item i.fa-whatsapp {
+		width: 18px;
+		height: 18px;
+		font-size: 12px;
+	}
+}

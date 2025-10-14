@@ -1,0 +1,232 @@
+/*
+  header.css: estilos específicos do header
+  - Layout desktop e mobile
+  - Menu hamburger
+  - Menu lateral (sidebar) para mobile
+*/
+
+/* Header base */
+.header {
+	background: linear-gradient(180deg,
+		var(--color-blue-700) 10%,
+		var(--color-blue-700) 20%,
+		var(--color-blue-800) 90%,
+		var(--color-blue-800) 100%
+	);
+	color: var(--color-white);
+	position: relative;
+	z-index: 100;
+	overflow: visible;
+}
+
+.header__wrap {
+	display: grid;
+	grid-template-columns: auto 1fr auto;
+	gap: 24px;
+	align-items: center;
+	padding: 40px 0;
+	min-height: var(--header-min-h);
+}
+
+/* Logo */
+.header__logo {
+	position: relative;
+	z-index: 105;
+	display: block;
+	width: var(--logo-width);
+	height: 0;
+	overflow: visible;
+}
+
+.header__logo img {
+	position: absolute;
+	left: 0;
+	top: calc(-1 * var(--logo-overlap-top));
+	height: var(--logo-size);
+	width: auto;
+	display: block;
+	filter: drop-shadow(0 2px 6px rgba(0,0,0,.2));
+}
+
+/* Menu Desktop */
+.header__nav {
+	justify-self: center;
+}
+
+.header__nav ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	gap: 60px;
+	justify-content: center;
+}
+
+.header__nav a {
+	color: var(--color-white);
+	text-decoration: none;
+	font-size: 16px;
+	font-weight: 600;
+	letter-spacing: .2px;
+	padding: 10px 6px;
+	line-height: 1;
+	transition: color .2s;
+}
+
+.header__nav a:hover {
+	color: var(--color-gray-200);
+}
+
+/* Botão Hamburger (oculto no desktop) */
+.header__hamburger {
+	display: none;
+	flex-direction: column;
+	justify-content: space-around;
+	width: 28px;
+	height: 24px;
+	background: transparent;
+	border: none;
+	cursor: pointer;
+	padding: 0;
+	z-index: 105;
+	position: relative;
+}
+
+.header__hamburger span {
+	width: 100%;
+	height: 3px;
+	background: var(--color-white);
+	border-radius: 2px;
+	transition: all .3s ease;
+	transform-origin: center;
+}
+
+/* Animação do hamburger quando menu aberto */
+.header__hamburger.active span:nth-child(1) {
+	transform: rotate(45deg) translateY(10px);
+}
+
+.header__hamburger.active span:nth-child(2) {
+	opacity: 0;
+}
+
+.header__hamburger.active span:nth-child(3) {
+	transform: rotate(-45deg) translateY(-10px);
+}
+
+/* Menu Mobile (sidebar) */
+.header__nav--mobile {
+	position: fixed;
+	top: 0;
+	right: -100%;
+	width: 280px;
+	height: 100vh;
+	background: var(--color-blue-800);
+	box-shadow: -4px 0 20px rgba(0,0,0,.3);
+	z-index: 104;
+	padding: 80px 20px 20px;
+	overflow-y: auto;
+	transition: right .3s ease;
+}
+
+.header__nav--mobile.active {
+	right: 0;
+}
+
+.header__nav--mobile ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 0;
+}
+
+.header__nav--mobile li {
+	border-bottom: 1px solid rgba(255,255,255,.1);
+}
+
+.header__nav--mobile a {
+	color: var(--color-white);
+	text-decoration: none;
+	font-size: 16px;
+	font-weight: 600;
+	display: block;
+	padding: 16px 12px;
+	transition: background .2s, padding-left .2s;
+}
+
+.header__nav--mobile a:hover {
+	background: rgba(255,255,255,.08);
+	padding-left: 20px;
+}
+
+/* Overlay para fechar o menu */
+.header__overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background: rgba(0,0,0,.5);
+	z-index: 103;
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity .3s ease;
+}
+
+.header__overlay.active {
+	opacity: 1;
+	pointer-events: all;
+}
+
+/* Responsivo: Mobile */
+@media (max-width: 900px) {
+	.header__wrap {
+		grid-template-columns: auto 1fr auto;
+		padding: 30px 0;
+		gap: 16px;
+	}
+
+	/* Esconder menu desktop */
+	.header__nav {
+		display: none;
+	}
+
+	/* Mostrar hamburger */
+	.header__hamburger {
+		display: flex;
+		justify-self: end;
+		margin-right: 0;
+	}
+
+	/* Ajustes do logo em mobile - mais alto */
+	.header__logo {
+		width: 140px;
+	}
+	
+	.header__logo img {
+		height: 200px;
+		top: -100px;
+	}
+}
+
+@media (max-width: 640px) {
+	.header__nav--mobile {
+		width: 100%;
+		right: -100%;
+	}
+
+	.header__wrap {
+		padding: 20px 0;
+	}
+
+	.header__logo {
+		width: 120px;
+	}
+	
+	.header__logo img {
+		height: 170px;
+		top: -85px;
+	}
+}

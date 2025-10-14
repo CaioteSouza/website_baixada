@@ -1,0 +1,270 @@
+/*
+  footer.css: estilos do rodapé do site
+*/
+
+.footer {
+	background: linear-gradient(180deg,
+		var(--color-blue-700) 10%,
+		var(--color-blue-700) 20%,
+		var(--color-blue-800) 90%,
+		var(--color-blue-800) 100%
+	);
+	color: var(--color-white);
+	padding: 60px 0 0;
+}
+
+.footer__content {
+	display: grid;
+	grid-template-columns: auto auto 1.2fr;
+	gap: 40px;
+	align-items: start;
+	padding-bottom: 40px;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Colunas */
+.footer__column {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.footer__column--logo {
+	align-items: flex-end;
+}
+
+.footer__title {
+	font-size: 18px;
+	font-weight: 600;
+	margin: 0 0 8px;
+	color: var(--color-blue-500);
+	letter-spacing: 0.3px;
+}
+
+/* Links */
+.footer__link {
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+	color: var(--color-blue-800);
+	text-decoration: none;
+	font-size: 14px;
+	line-height: 1.5;
+	transition: all .3s ease;
+	padding: 10px 18px;
+	border: 1.5px solid var(--color-blue-500);
+	background: var(--color-blue-500);
+	border-radius: 25px;
+	white-space: nowrap;
+	font-weight: 500;
+}
+
+.footer__link:hover {
+	color: var(--color-white);
+	transform: translateY(-2px);
+	border-color: var(--color-teal-300);
+	background: var(--color-teal-300);
+	box-shadow: 0 4px 12px rgba(56, 178, 172, 0.3);
+}
+
+.footer__link i {
+	font-size: 18px;
+	min-width: 18px;
+}
+
+.footer__link--location {
+	max-width: 580px;
+	white-space: normal;
+}
+
+/* Campo de Busca */
+.footer__search {
+	display: flex;
+	margin-top: 10px;
+	border-radius: 25px;
+	overflow: hidden;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.footer__search-input {
+	flex: 1;
+	padding: 12px 20px;
+	border: none;
+	outline: none;
+	font-size: 14px;
+	font-family: 'Inter', sans-serif;
+	background: var(--color-white);
+	color: var(--color-neutral-900);
+}
+
+.footer__search-input::placeholder {
+	color: var(--color-neutral-500);
+}
+
+.footer__search-button {
+	padding: 12px 20px;
+	border: none;
+	background: var(--color-white);
+	color: var(--color-primary);
+	cursor: pointer;
+	transition: all .3s ease;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.footer__search-button:hover {
+	background: var(--color-teal-300);
+	color: var(--color-white);
+}
+
+.footer__search-button i {
+	font-size: 16px;
+}
+
+/* Logo e Descrição */
+.footer__brand {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	gap: 16px;
+	max-width: 380px;
+}
+
+.footer__logo {
+	width: 250px;
+    align-self: center;
+	height: auto;
+	object-fit: contain;
+}
+
+.footer__description {
+	font-size: 14px;
+	line-height: 1.6;
+	margin: 0 0 -20px;
+	text-align: center;
+	opacity: 0.85;
+	color: var(--color-white);
+}
+
+/* Rodapé Inferior */
+.footer__bottom {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 24px 0;
+}
+
+.footer__copyright {
+	font-size: 13px;
+	margin: 0;
+	opacity: 0.8;
+}
+
+.footer__social {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	background: rgba(255, 255, 255, 0.1);
+	color: var(--color-white);
+	text-decoration: none;
+	transition: all .3s ease;
+	font-size: 20px;
+}
+
+.footer__social:hover {
+	background: var(--color-teal-300);
+	transform: translateY(-3px);
+	box-shadow: 0 4px 12px rgba(56, 178, 172, 0.3);
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+	.footer {
+		padding: 50px 0 0;
+	}
+
+	.footer__content {
+		grid-template-columns: 1fr 1fr;
+		gap: 40px;
+		padding-bottom: 30px;
+	}
+
+	.footer__column--logo {
+		grid-column: 1 / -1;
+		align-items: center;
+	}
+
+	.footer__brand {
+		align-items: center;
+		max-width: 100%;
+	}
+
+	.footer__description {
+		text-align: center;
+	}
+
+	.footer__link--location {
+		max-width: 100%;
+	}
+}
+
+@media (max-width: 640px) {
+	.footer {
+		padding: 40px 0 0;
+	}
+
+	.footer__content {
+		grid-template-columns: 1fr;
+		gap: 32px;
+		padding-bottom: 24px;
+	}
+
+	.footer__column {
+		align-items: center;
+		text-align: center;
+	}
+
+	.footer__column--logo {
+		grid-column: auto;
+	}
+
+	.footer__title {
+		font-size: 16px;
+	}
+
+	.footer__link {
+		justify-content: center;
+	}
+
+	.footer__link:hover {
+		transform: translateX(0);
+		transform: translateY(-2px);
+	}
+
+	.footer__search {
+		width: 100%;
+	}
+
+	.footer__logo {
+		width: 150px;
+	}
+
+	.footer__description {
+		font-size: 11px;
+	}
+
+	.footer__bottom {
+		flex-direction: column;
+		gap: 16px;
+		padding: 20px 0;
+		text-align: center;
+	}
+
+	.footer__copyright {
+		font-size: 12px;
+	}
+}
