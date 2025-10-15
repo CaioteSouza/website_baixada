@@ -10,12 +10,12 @@
 		<!-- Menu Desktop -->
 		<nav class="header__nav" aria-label="Menu principal">
 			<ul>
-				<li><a href="#">Início</a></li>
-				<li><a href="#">O Sindicato</a></li>
-				<li><a href="#">Diretoria</a></li>
-				<li><a href="#">Convenções Coletivas</a></li>
-				<li><a href="#">Notícias</a></li>
-				<li><a href="#">Contato</a></li>
+				<li><a href="<?= $basePath ?>/">Início</a></li>
+				<li><a href="<?= $basePath ?>/em-desenvolvimento.php">O Sindicato</a></li>
+				<li><a href="<?= $basePath ?>/em-desenvolvimento.php">Diretoria</a></li>
+				<li><a href="<?= $basePath ?>/em-desenvolvimento.php">Convenções Coletivas</a></li>
+				<li><a href="<?= $basePath ?>/#noticias">Notícias</a></li>
+				<li><a href="<?= $basePath ?>/#contato">Contato</a></li>
 			</ul>
 		</nav>
 
@@ -31,12 +31,12 @@
 <!-- Menu Mobile (sidebar) -->
 <nav class="header__nav--mobile" aria-label="Menu mobile">
 	<ul>
-		<li><a href="#">Início</a></li>
-		<li><a href="#">O Sindicato</a></li>
-		<li><a href="#">Diretoria</a></li>
-		<li><a href="#">Convenções Coletivas</a></li>
-		<li><a href="#">Notícias</a></li>
-		<li><a href="#">Contato</a></li>
+		<li><a href="<?= $basePath ?>/">Início</a></li>
+		<li><a href="<?= $basePath ?>/em-desenvolvimento.php">O Sindicato</a></li>
+		<li><a href="<?= $basePath ?>/em-desenvolvimento.php">Diretoria</a></li>
+		<li><a href="<?= $basePath ?>/em-desenvolvimento.php">Convenções Coletivas</a></li>
+		<li><a href="<?= $basePath ?>/#noticias">Notícias</a></li>
+		<li><a href="<?= $basePath ?>/#contato">Contato</a></li>
 	</ul>
 </nav>
 

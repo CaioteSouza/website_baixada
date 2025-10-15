@@ -3,7 +3,7 @@
 ?>
 <link rel="stylesheet" href="<?= $basePath ?>/assets/css/footer.css">
 
-<footer class="footer">
+<footer id="contato" class="footer">
 	<div class="container">
 		<div class="footer__content">
 			<!-- Coluna 1: Localização -->

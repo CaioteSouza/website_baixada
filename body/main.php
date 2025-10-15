@@ -27,7 +27,7 @@
 </section>
 
 <!-- Seção de Notícias -->
-<section class="news">
+<section id="noticias" class="news">
 	<div class="container">
 		<h2 class="news__title">Últimas Notícias</h2>
 		
