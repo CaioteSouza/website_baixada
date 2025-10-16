@@ -51,7 +51,7 @@
 			<p class="footer__copyright">
 				© 2025 SindHosfil Linosesp | Todos os direitos reservados
 			</p>
-			<a href="https://www.instagram.com/sindhosfil/" target="_blank" class="footer__social" aria-label="Instagram">
+			<a href="https://www.instagram.com/" target="" class="footer__social" aria-label="Instagram">
 				<i class="fa-brands fa-instagram"></i>
 			</a>
 		</div>

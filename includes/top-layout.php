@@ -25,12 +25,12 @@
 			<div class="topbar__center">
 				<span class="topbar__item"><i class="fa-solid fa-map-location-dot" aria-hidden="true"></i> Av. Bernardino de Campos, 47 - Vila Belmiro, Santos - SP</span>
 				<span class="topbar__divider">•</span>
-				<a class="topbar__item" href="https://wa.me/551321023506" target="_blank" rel="noopener" aria-label="WhatsApp">
+				<a class="topbar__item" href="https://wa.me/551321023506" target="" rel="noopener" aria-label="WhatsApp">
 					<i class="fa-brands fa-whatsapp" aria-hidden="true"></i> (13) 2102-3506
 				</a>
 			</div>
 			<div class="topbar__right">
-				<a class="topbar__social" href="https://instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">
+				<a class="topbar__social" href="https://instagram.com/" target="" rel="noopener" aria-label="Instagram">
 					<i class="fa-brands fa-instagram" aria-hidden="true"></i>
 				</a>
 			</div>
